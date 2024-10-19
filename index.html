@@ -42,7 +42,8 @@
         function leap_year(){
            let  x = document.getElementById("year").value;
             if (x % 4 === 0 ){
-                let y= document.getElementById("result1").innerHTML += x + " is a leap year." ;
+                let y= document.getElementById("result1").innerHTML = x + " is a leap year." ;
+                y= document.getElementById("year").value = "" ;
 
 
             }

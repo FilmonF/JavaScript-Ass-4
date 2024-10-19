@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Task -1 - leap Year -->
+     <h3>1. Checking a given if it is a leap-year</h3>
+     <input type="text" id="year"> 
+     <button onclick="leap_year()"> Check leap-year</button>
+     <p id="result1"></p>
+
+     <!-- // -->
+
+     <!-- TAsk -2  -->
+     <h3>2. Check a year if junuary 1st falls on Sunday</h3>
+     <button onclick="sunday()">Check junuary 1st on Sunday</button>
+    <p id="result2" ></p>
+
+    <!-- // -->
+
+    <!-- Task -3 -->
+
+     <h3>3. A javascript function to check if numbers 1-15 are Even or Odd</h3>
+    <button onclick="evenOdd()"> Check Even/Odd </button>
+    <p id="result3"></p>
+
+    <!-- // -->
+     
+
+    <!-- task 4  -->
+    <h4>4. Palindrome Checker</h4>
+    Enter your string: <input type="text" id="string">
+    <button onclick="palindrom_checker()">Check Palindrome</button>
+    <p id="result4"></p>
+    <!-- / -->
+
+    <script>
+
+        function leap_year(){
+           let  x = document.getElementById("year").value;
+            if (x % 4 === 0 ){
+                let y= document.getElementById("result1").innerHTML += x + " is a leap year." ;
+
+
+            }
+            
+        else {
+            let z= document.getElementById("result1").innerHTML =  x + " is not a leap year.";
+        }
+        }
+   
+
+        // Task - 2 1st january Sunday
+
+      function sunday(){
+
+        for( var year= 2014; year <= 2050 ; year++ ) {
+            var d = new Date(year, 0 , 1)
+        
+        if (d.getDay() === 0){
+
+           document.getElementById("result2").innerHTML += "1st January of " + year + " falls on Sunday  <br>"
+           
+          
+        }
+
+
+        }
+        
+
+        // else {
+        //     console.log("")
+        // }
+      }
+        
+    //   TAsk - 3 
+    // Check an number(1-15) is Even or Odd 
+
+    function evenOdd() {
+        for( var x = 0 ; x <= 15 ; x++) {
+
+        if (x % 2 === 0){
+             document.getElementById("result3").innerHTML+= x + " : even number <br>" ;
+          
+        }
+        else {
+             document.getElementById("result3").innerHTML+= x + " : an odd number <br>" ;
+
+        }
+        }
+        
+    }
+   
+    
+    
+    // Task 4  Palindrom checker
+
+    function palindrom_checker() {
+
+        let string = document.getElementById("string").value;
+
+        for (var i = 0; i < string.length; i++) {
+
+            let x=string.charAt(i)
+            let y = string.charAt(string.length-(i+=1))
+
+            if ( x === y ){
+
+                document.getElementById("result4").innerHTML = string + " is palindrome"
+            }
+
+            else{
+
+                document.getElementById("result4").innerHTML = string + " is not palindrome"
+
+            }
+
+
+        }
+
+        
+    }
+
+
+    </script>
+
+  
+     
+    
+    
+   
+    
+</body>
+</html
